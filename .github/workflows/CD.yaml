@@ -1,0 +1,57 @@
+name: CD
+on:
+  push:
+    branches:
+      - main
+      - dev
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_test_deploy:
+    name: Build, Test, and Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'write'
+      actions: 'read'
+      pull-requests: 'write'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - run: git fetch
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        shell: bash
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+
+      - uses: actions/cache@v3
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        id: setSHAs
+        uses: nrwl/nx-set-shas@v2
+        with:
+          main-branch-name: dev
+
+      - name: Run Tests on Affected Apps and Libraries
+        env:
+          DATABASE_URL: 'mongodb://localhost:27017'
+        run: npx nx affected --target=test
+
+      - name: Build Affected Targets
+        run: npx nx affected --target=build
