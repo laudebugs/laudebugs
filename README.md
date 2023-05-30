@@ -1,4 +1,3 @@
-<!-- ![Banner](github_banner.gif) -->
 ## Hello there👋🏽
 
 I'm Laurence - a web developer working at the intersection of storytelling and software. Software and story-telling? You may ask🤔. If you're curious, you can find some of my writing [here](https://laudebugs.me/), or my tech articles [right here](https://laudebugs.me/dev).
