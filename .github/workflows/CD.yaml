@@ -1,9 +1,8 @@
 name: CD
 on:
   push:
-    branches:
-      - main
-      - dev
+    branches: [main]
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -15,11 +14,14 @@ jobs:
     permissions:
       contents: 'write'
       actions: 'read'
-      pull-requests: 'write'
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Set Up User Credentials
+        uses: fregante/setup-git-user@v2
 
       - run: git fetch
       - uses: actions/setup-node@v3
@@ -32,7 +34,7 @@ jobs:
         run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
 
       - uses: actions/cache@v3
-        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        id: npm-cache
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -49,9 +51,15 @@ jobs:
           main-branch-name: dev
 
       - name: Run Tests on Affected Apps and Libraries
-        env:
-          DATABASE_URL: 'mongodb://localhost:27017'
         run: npx nx affected --target=test
 
       - name: Build Affected Targets
         run: npx nx affected --target=build
+
+      - name: Version And Update Changelogs
+        run: |
+          nx affected --target version
+          git push --follow-tags origin HEAD:${{ github.ref }}
+
+      - name: Publish Affected Targets
+        run: npx nx affected --target=publish
