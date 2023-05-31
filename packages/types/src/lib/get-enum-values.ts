@@ -13,5 +13,6 @@
  * // values = ['First', 'Second', 'Third']
  * @returns An array of enum values
  */
+
 export const getEnumValues = <E extends Record<string, any>>(enumObject: E) =>
 	Object.keys(enumObject).map((key) => enumObject[key as keyof E]);
