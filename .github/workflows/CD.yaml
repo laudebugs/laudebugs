@@ -57,7 +57,7 @@ jobs:
 
       - name: Version And Update Changelogs
         run: |
-          nx affected --target version
+          npx nx affected --target version
           git push --follow-tags origin HEAD:${{ github.ref }}
 
       - name: Publish Affected Targets
