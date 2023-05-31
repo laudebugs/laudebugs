@@ -10,7 +10,8 @@
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
 import chalk from 'chalk';
-
+import { getLatestVersion } from './get-latest-version.mjs';
+import { getLatestTag } from './get-latest-tag.mjs';
 import devkit from '@nx/devkit';
 const { readCachedProjectGraph } = devkit;
 
@@ -23,8 +24,17 @@ function invariant(condition, message) {
 
 // Executing publish script: node path/to/publish.mjs {name} --version {version} --tag {tag}
 // Default "tag" to "next" so we won't publish the "latest" tag by accident.
-const [, , name, version, tag = 'next'] = process.argv;
+let [, , name, version, tag = 'next'] = process.argv;
 // A simple SemVer validation to validate the version
+
+if (!version) {
+	version = getLatestVersion(name);
+}
+
+if (!tag) {
+	tag = getLatestTag();
+}
+
 const validVersion = /^\d+\.\d+\.\d+(-\w+\.\d+)?/;
 invariant(
 	version && validVersion.test(version),
