@@ -41,7 +41,6 @@ jobs:
           restore-keys: ${{ runner.os }}-node-
 
       - name: Install Dependencies
-        if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
