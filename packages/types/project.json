@@ -8,7 +8,19 @@
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/types"
+        "outputPath": "dist/packages/types",
+		"assets": [
+		  {
+			"glob": "**/*",
+			"input": "packages/types/Changelog.md",
+			"output": "Changelog.md"
+		  },
+		  {
+			"glob": "**/*",
+			"input": "packages/types/README.md",
+			"output": "README.md"
+		  }
+		]
       }
     },
     "publish": {

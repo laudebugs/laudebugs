@@ -1,5 +1,25 @@
 {
-  "name": "@laudebugs/types",
-  "version": "0.2.0",
-  "type": "commonjs"
+	"name": "@laudebugs/types",
+	"version": "0.2.0",
+	"type": "commonjs",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/laudebugs/laudebugs/tree/main/packages/types"
+	},
+	"keywords": [
+		"typescript",
+		"types",
+		"utilities"
+	],
+	"author": "laudebugs",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/laudebugs/laudebugs/issues"
+	},
+	"homepage": "https://github.com/laudebugs/laudebugs/tree/main/packages/types"
 }
