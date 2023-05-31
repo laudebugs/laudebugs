@@ -1,11 +1,9 @@
-# types
+# TypeScript type utilities
 
-This library was generated with [Nx](https://nx.dev).
+## Installation
 
-## Building
+```sh
+npm i @laudebugs/types
+```
 
-Run `nx build types` to build the library.
-
-## Running unit tests
-
-Run `nx test types` to execute the unit tests via [Jest](https://jestjs.io).
+## Usage
