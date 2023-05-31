@@ -28,6 +28,11 @@ jobs:
         with:
           node-version: 16.x
 
+      - name: Configure npm
+        run: |
+            echo '//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}' >> .npmrc
+            cat .npmrc
+
       - name: Get npm cache directory
         id: npm-cache-dir
         shell: bash
@@ -59,11 +64,6 @@ jobs:
         run: |
           npx nx affected --target version
           git push --follow-tags origin HEAD:${{ github.ref }}
-
-      - name: Configure npm
-        run: |
-            echo '//registry.npmjs.org/:_authToken=${{secrets.NPM_TOKEN}}' >> .npmrc
-            cat .npmrc
 
       - name: Publish Affected Targets
         run: npx nx affected --target=publish --dry-run
