@@ -1,13 +1,16 @@
 ## Hello there👋🏽
 
-I'm Laurence - a web developer working at the intersection of storytelling and software. Software and story-telling? You may ask🤔. If you're curious, you can find some of my writing [here](https://laudebugs.me/), or my tech articles [right here](https://laudebugs.me/dev).
+I'm Laurence - a software engineer based in New York.
+You can find some of my writing [here](https://laudebugs.me/journal), or my tech articles [right here](https://laudebugs.me/dev).
 
 Feel free to reach out to me about an interesting project or just say hello!
 
 These days, I'm interested in (and work with):
 - Angular
 - React (React Native & Next.js)
-- React Native
+- React Native & Ionic
+- Qwik
+- Svelte
 
 <hr/>
 
@@ -18,7 +21,7 @@ These days, I'm interested in (and work with):
   <img src="https://play-lh.googleusercontent.com/zjr8EFQTCKN0oZQV9M9iOOpWIs5wggDKc48JWIHDWSCXT8w3lbK_UWe6cpzFJAFX_iXa" alt="Laurence Ininda's EyeEm Profile" height="28" width="28" padding="30">
 </a>&nbsp&nbsp
 <a href="https://www.linkedin.com/in/laurence-ininda/">
-  <img src="https://pnggrid.com/wp-content/uploads/2021/05/Linkedin-logo-Transparent-Image-1024x1024.png" alt="Laurence Ininda's LinkedIn Profile" height="30" width="30" padding="30">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png?20140125013055" alt="Laurence Ininda's LinkedIn Profile" height="30" width="30" padding="30">
 </a>&nbsp&nbsp
 <a href="https://www.instagram.com/laudebugs/">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1025px-Instagram-Icon.png" alt="Laurence Ininda's Gram" height="30" width="30" padding="30">
