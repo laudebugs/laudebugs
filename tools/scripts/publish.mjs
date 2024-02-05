@@ -26,7 +26,7 @@ function invariant(condition, message) {
 let [, , name, version, tag = 'next'] = process.argv;
 // A simple SemVer validation to validate the version
 
-if (version === 'undefined') {
+if (version === 'undefined' || !version) {
 	version = getLatestVersion(name).version.trim();
 }
 
@@ -67,4 +67,4 @@ try {
 }
 
 // Execute "npm publish" to publish
-execSync(`npm publish --access public --tag ${tag}`);
+// execSync(`npm publish --access public --tag ${tag}`);

@@ -66,6 +66,6 @@ jobs:
           git push --follow-tags origin HEAD:${{ github.ref }}
 
       - name: Publish Affected Targets
-        run: npx nx affected --target=publish --dry-run
+        run: npx nx affected --target=publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
