@@ -1,0 +1,16 @@
+# Changelog
+
+This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
+
+## [0.2.3](https://github.com/laudebugs/laudebugs/compare/types-0.2.2...types-0.2.3) (2024-02-05)
+
+
+### ⚙️ Chores
+
+* run nx repair ([839afa5](https://github.com/laudebugs/laudebugs/commit/839afa5132d6fcf61c123deeb0b095812690fc01))
+* **types:** release version 0.2.3 ([32e0879](https://github.com/laudebugs/laudebugs/commit/32e0879d9f84b6e55fa130ff1bc23b3b07e5389e))
+
+
+### 🤖 Continuous Integration
+
+* **types:** update project.json ([a1a1696](https://github.com/laudebugs/laudebugs/commit/a1a16966d4f625c3201ccae6af27cafd8a311d58))
