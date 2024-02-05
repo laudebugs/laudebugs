@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://github.com/laudebugs/laudebugs/compare/types-0.2.3...types-0.2.4) (2024-02-05)
+
+
+### 🤖 Continuous Integration
+
+* update publish script ([6865019](https://github.com/laudebugs/laudebugs/commit/686501943eccc27cfa56db55288e51648cf21838))
+
 ## [0.2.3](https://github.com/laudebugs/laudebugs/compare/types-0.2.2...types-0.2.3) (2024-02-05)
 
 

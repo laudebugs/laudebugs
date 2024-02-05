@@ -6,4 +6,5 @@
 npm i @laudebugs/types
 ```
 
-## Usage
+## Utility Types
+
