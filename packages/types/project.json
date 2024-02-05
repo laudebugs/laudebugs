@@ -46,7 +46,10 @@
 			"executor": "@jscutlery/semver:version",
 			"options": {
 				"preset": {
-					"name": "angular",
+					"commitParserOptions": {
+						"headerPattern": "^([A-Z]{3,}-\\d{1,5}):? (chore|build|ci|docs|feat|fix|perf|refactor|test)(?:\\(([\\w-]+)\\))?\\S* (.+)$",
+						"headerCorrespondence": ["ticketReference", "type", "scope", "subject"]
+					  },
 					"types": [
 						{ "type": "feat", "section": "✨ Features" },
 						{ "type": "fix", "section": "🐞 Bug Fixes" },
