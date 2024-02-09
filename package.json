@@ -72,7 +72,8 @@
 		"vitest": "^1.0.0"
 	},
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"apps/*"
 	],
 	"husky": {
 		"hooks": {
