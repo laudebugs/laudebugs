@@ -1,4 +1,9 @@
 {
+	"pluginsConfig": {
+		"@nx/js": {
+			"analyzeSourceFiles": true
+		}
+	},
 	"extends": "nx/presets/npm.json",
 	"$schema": "./node_modules/nx/schemas/nx-schema.json",
 	"targetDefaults": {
@@ -21,6 +26,11 @@
 			"cache": true
 		},
 		"@nx/angular:package": {
+			"cache": true,
+			"dependsOn": ["^build"],
+			"inputs": ["default", "^default"]
+		},
+		"@angular-devkit/build-angular:application": {
 			"cache": true,
 			"dependsOn": ["^build"],
 			"inputs": ["default", "^default"]
@@ -47,11 +57,12 @@
 		},
 		"@nx/angular:component": {
 			"style": "css"
-		}
-	},
-	"pluginsConfig": {
-		"@nx/js": {
-			"analyzeSourceFiles": true
+		},
+		"@nx/angular:application": {
+			"e2eTestRunner": "none",
+			"linter": "eslint",
+			"style": "scss",
+			"unitTestRunner": "jest"
 		}
 	}
 }
