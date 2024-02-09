@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.5](https://github.com/laudebugs/laudebugs/compare/types-0.2.4...types-0.2.5) (2024-02-05)
+
+
+### ⚙️ Chores
+
+* update types ([31b6aa4](https://github.com/laudebugs/laudebugs/commit/31b6aa478f0bc763061b61f4d2e587dab062a63f))
+
 ## [0.2.4](https://github.com/laudebugs/laudebugs/compare/types-0.2.3...types-0.2.4) (2024-02-05)
 
 
