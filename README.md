@@ -1,7 +1,8 @@
 ## Hello there👋🏽
 
 I'm Laurence - a software engineer based in New York.
-You can find some of my writing [here](https://laudebugs.me/journal), or my tech articles [right here](https://laudebugs.me/dev).
+
+> You can find some of my tech writing here: [blog.laudebugs.me](https://blog.laudebugs.me) and my other writing [here on Substack](https://imperfect.place).
 
 Feel free to reach out to me about an interesting project or just say hello!
 
