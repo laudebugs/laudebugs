@@ -1,6 +1,6 @@
 ## Hello there ☘️
 
-I'm Laurence. Thanks for checking me out.
+I'm Laurence. Thanks for checking out my work.
 
 ---
 
